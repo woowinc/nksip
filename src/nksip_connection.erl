@@ -696,12 +696,19 @@ do_stop(Reason, #state{app_id=AppId, proto=Proto}=State) ->
     {ok, nksip:call_id(), binary(), binary()} | partial | {error, binary()}.
 
 extract(Proto, Data, Pos) ->
-    case 
-        re:run(Data, nksip_config_cache:re_call_id(), [{capture, all_but_first, binary}])
-    of
-        {match, [_, CallId]} ->
-            case 
-                re:run(Data, nksip_config_cache:re_content_length(), 
+  Pattern = case nksip_config_cache:re_call_id() of
+              undefined ->
+                nksip_config:make_cache(),
+                nksip_config_cache:re_call_id();
+              Else ->
+                Else
+            end,
+  case
+  re:run(Data, Pattern, [{capture, all_but_first, binary}])
+  of
+    {match, [_, CallId]} ->
+      case
+      re:run(Data, nksip_config_cache:re_content_length(),
                        [{capture, all_but_first, list}])
             of
                 {match, [_, CL0]} ->
