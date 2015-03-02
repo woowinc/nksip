@@ -66,7 +66,7 @@ app_config() ->
   nksip_config:get(app_config).
 
 re_call_id() ->
-  nksip_config_cache:re_call_id().
+  nksip_config:get(re_call_id).
 
 re_content_length() ->
   nksip_config:get(re_content_length).
