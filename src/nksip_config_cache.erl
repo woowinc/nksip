@@ -33,54 +33,41 @@
 %% This functions will never be called
 
 global_id() ->
-  io:format("Stub cache cache called for :~p", [global_id]),
   nksip_config:get(global_id).
 
 local_ips() ->
-  io:format("Stub cache cache called for :~p", [local_ips]),
   nksip_config:get(local_ips).
 
 main_ip() ->
-  io:format("Stub cache cache called for :~p", [main_ip]),
   nksip_config:get(main_ip).
 
 main_ip6() ->
-  io:format("Stub cache cache called for :~p", [main_ip6]),
   nksip_config:get(main_ip6).
 
 sync_call_time() ->
-  io:format("Stub cache cache called for :~p", [sync_call_time]),
   nksip_config:get(sync_call_time).
 
 msg_routers() ->
-  io:format("Stub cache cache called for :~p", [msg_routers]),
   nksip_config:get(msg_routers).
 
 dns_cache_ttl() ->
-  io:format("Stub cache cache called for :~p", [dns_cache_ttl]),
   nksip_config:get(dns_cache_ttl).
 
 local_data_path() ->
-  io:format("Stub cache cache called for :~p", [local_data_path]),
   nksip_config:get(local_data_path).
 
 global_max_connections() ->
-  io:format("Stub cache cache called for :~p", [global_max_connections]),
   nksip_config:get(global_max_connections).
 
 global_max_calls() ->
-  io:format("Stub cache cache called for :~p", [global_max_calls]),
   nksip_config:get(global_max_calls).
 
 app_config() ->
-  io:format("Stub cache cache called for :~p", [app_config]),
   nksip_config:get(app_config).
 
 re_call_id() ->
-  io:format("Stub cache cache called for :~p", [re_call_id]),
   nksip_config_cache:re_call_id().
 
 re_content_length() ->
-  io:format("Stub cache cache called for :~p", [re_content_length]),
   nksip_config:get(re_content_length).
 
